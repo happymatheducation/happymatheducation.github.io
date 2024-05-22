@@ -147,31 +147,31 @@ class LinearEquations extends Component {
 
         switch (questionIndex) {
             case 0:
-                questionTex = <>What is the slope of line {lTex}? </>;
+                questionTex = <><br />What is the slope of line {lTex}? </>;
                 correctAnswer = slope;
                 [correctNumerator, correctDenominator] = slopeFraction;
                 break;
             case 1:
-                questionTex = <>What is the y-intercept of line {lTex}? </>;
+                questionTex = <><br />What is the y-intercept of line {lTex}? </>;
                 correctAnswer = yIntercept;
                 break;
             case 2:
-                questionTex = <>What is the x-intercept of line {lTex}? </>;
+                questionTex = <><br />What is the x-intercept of line {lTex}? </>;
                 correctAnswer = xIntercept;
                 break;
             case 3:
                 askingCoordinateTex = askingX ? 'x_P' : 'y_P';
-                questionTex = <>The point <MathComponent display={false} tex={allConditionsTex[questionIndex]} /> is on the line {lTex}. What is <MathComponent display={false} tex={askingCoordinateTex} />? </>;
+                questionTex = <>The point <MathComponent display={false} tex={allConditionsTex[questionIndex]} /> is on the line {lTex}. <br />What is <MathComponent display={false} tex={askingCoordinateTex} />? </>;
                 correctAnswer = askingX ? xP : yP;
                 break;
             case 4:
                 askingCoordinateTex = askingX ? 'x_Q' : 'y_Q';
-                questionTex = <>The point <MathComponent display={false} tex={allConditionsTex[questionIndex]} /> is on the line {lTex}. What is <MathComponent display={false} tex={askingCoordinateTex} />? </>;
+                questionTex = <>The point <MathComponent display={false} tex={allConditionsTex[questionIndex]} /> is on the line {lTex}. <br />What is <MathComponent display={false} tex={askingCoordinateTex} />? </>;
                 correctAnswer = askingX ? xQ : yQ;
                 break;
             case 5:
                 askingCoordinateTex = askingX ? 'x_R' : 'y_R';
-                questionTex = <>The point <MathComponent display={false} tex={allConditionsTex[questionIndex]} /> is on the line {lTex}. What is <MathComponent display={false} tex={askingCoordinateTex} />? </>;
+                questionTex = <>The point <MathComponent display={false} tex={allConditionsTex[questionIndex]} /> is on the line {lTex}. <br />What is <MathComponent display={false} tex={askingCoordinateTex} />? </>;
                 correctAnswer = askingX ? xR : yR;
                 break;
             default:
@@ -200,13 +200,13 @@ class LinearEquations extends Component {
 
         let conditions, mGiven, bGiven
         if (allConditionIndexes.includes(5)) {
-            conditions = <>The points <MathComponent display={false} tex={allConditionsTex[3] + ', ' + allConditionsTex[4] + ', ' + allConditionsTex[5]} /> are on the same line
-                . What is <MathComponent display={false} tex={askingCoordinateTex} />? </>
+            conditions = <>The points <MathComponent display={false} tex={allConditionsTex[3] + ', ' + allConditionsTex[4] + ', ' + allConditionsTex[5]} /> are on the same line.
+                <br />What is <MathComponent display={false} tex={askingCoordinateTex} />? </>
         } else if (allConditionIndexes.includes(4)) {
             conditions = <>The points <MathComponent display={false} tex={allConditionsTex[3] + ', ' + allConditionsTex[4]} /> are on the line {lTex}. </>
             conditionTex1 = conditionIndex1 <= 2 ? conditionTex1 : '';
             conditionTex2 = conditionIndex2 <= 2 ? conditionTex2 : '';
-            questionTex = questionIndex <= 2 ? questionTex : <>What is < MathComponent display={false} tex={askingCoordinateTex} />? </>
+            questionTex = questionIndex <= 2 ? questionTex : <><br />What is < MathComponent display={false} tex={askingCoordinateTex} />? </>
             conditions = <>{conditions} {conditionTex1} {conditionTex2} {questionTex}</>
         } else if (allConditionIndexes.includes(3)) {
             mGiven = conditionIndex1 === 0 || conditionIndex2 === 0;
@@ -228,7 +228,7 @@ class LinearEquations extends Component {
                     : '+b')} />. </>
             conditionTex1 = conditionIndex1 === 2 ? conditionTex1 : '';
             conditionTex2 = conditionIndex2 === 2 ? conditionTex2 : '';
-            questionTex = questionIndex <= 2 ? questionTex : <>What is < MathComponent display={false} tex={askingCoordinateTex} />? </>
+            questionTex = questionIndex <= 2 ? questionTex : <><br />What is < MathComponent display={false} tex={askingCoordinateTex} />? </>
             conditions = <>{conditions} {conditionTex1} {conditionTex2} {questionTex}</>
         } else if (allConditionIndexes.includes(2)) {
             mGiven = conditionIndex1 === 0 || conditionIndex2 === 0;
@@ -248,7 +248,7 @@ class LinearEquations extends Component {
                                     ? ''
                                     : ('+' + yIntercept)
                                 : yIntercept
-                            : '+b')} /> is {xIntercept}. What is m?
+                            : '+b')} /> is {xIntercept}. <br />What is m?
                 </>
             } else if (questionIndex === 1) {
                 conditions = <>The x-intercept of the line {lTex}
@@ -265,10 +265,10 @@ class LinearEquations extends Component {
                                     ? ''
                                     : ('+' + yIntercept)
                                 : yIntercept
-                            : '+b')} /> is {xIntercept}. What is b?
+                            : '+b')} /> is {xIntercept}. <br />What is b?
                 </>
             } else if (questionIndex === 2) {
-                conditions = <>What is the x-intercept of the line {lTex}
+                conditions = <><br />What is the x-intercept of the line {lTex}
                     <MathComponent display={false} tex={':y={' +
                         (mGiven
                             ? slope === 1
@@ -288,7 +288,7 @@ class LinearEquations extends Component {
         } else { conditions = <>{conditionTex1} {conditionTex2} {questionTex}</> }
 
         return <>
-            {conditions}<br/>
+            {conditions} &nbsp;
             (Please type 'a/b' for fraction <MathComponent display={false} tex={'a \\over b'} />)</>
     }
 
