@@ -117,9 +117,9 @@ function Practice() {
                     <a href={euclid_theorem_answers}>Answers</a>
                 </div>
                 <div className='practicediv'>
-                    Line Through Two Points: <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href='/Practice/LineThroughTwoPoints_SlopeOnly'>App (Slope)</a> |
-                    <a href={line_through_two_points}>pdf</a> |
+                    Linear Equations (aka Linear Funcitons, Lines): <br />&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href='/Practice/LinearEquations'>App</a> |
+                    <a href={line_through_two_points}>pdf (Line through two points)</a> |
                     <a href={line_through_two_points_answers}>Answers</a>
                 </div>
                 <div className='practicediv'>

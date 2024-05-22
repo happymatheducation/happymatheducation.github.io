@@ -31,6 +31,18 @@ const myMath = {
         return Math.floor(Math.random() * (to - from + 1)) + from;
     },
 
+    randomDistinctIntegers(n, from, to) { //inclusive
+        let allIntegers = [];
+        let selected = [];
+        for (let i = from; i <= to; i++) { allIntegers.push(i) }
+        for (let i = 0; i < n; i++) {
+            let selectedIndex = this.randomInteger(0, allIntegers.length - 1);
+            selected.push(allIntegers[selectedIndex]);
+            allIntegers.splice(selectedIndex, 1);
+        }
+        return selected;
+    },
+
     randomRealNumber(from, to) {
         let ratio = Math.random();
         return (ratio * from + (1 - ratio) * to);

@@ -4,8 +4,8 @@
     "\\public",
     "\\src",
     "\\src\\components",
-    "\\src\\pages",
-    "\\src\\pages\\Practice"
+    "\\src\\pages"
   ],
+  "SelectedNode": "\\src\\pages\\Contests.js",
   "PreviewInSolutionExplorer": false
 }

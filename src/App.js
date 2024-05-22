@@ -27,7 +27,7 @@ const EuclidsTheorem = lazy(() => import("./pages/Practice/Euclids_Theorem.js"))
 const PrimeFactorizationForFactorials = lazy(() => import("./pages/Practice/PrimeFactorizationForFactorials.js"))
 const ArithmeticSequence = lazy(() => import("./pages/Practice/ArithmeticSequence.js"))
 const RollingDice = lazy(() => import("./pages/Practice/RollingDice.js"))
-const LineThroughTwoPointsSlopeOnly = lazy(() => import("./pages/Practice/LineThroughTwoPoints_SlopeOnly.js"))
+const LinearEquations = lazy(() => import("./pages/Practice/LinearEquations.js"))
 const CompleteTheSquare = lazy(() => import("./pages/Practice/CompleteTheSquare.js"))
 const ChineseRemainderTheorem = lazy(() => import("./pages/Practice/ChineseRemainderTheorem.js"))
 const SimpleLogarithm = lazy(() => import("./pages/Practice/SimpleLogarithm.js"))
@@ -181,7 +181,7 @@ const App = () => {
                         <Route exact path='/Practice/Euclids_Theorem' element={<EuclidsTheorem />} />
                         <Route exact path='/Practice/ArithmeticSequence' element={<ArithmeticSequence />} />
                         <Route exact path='/Practice/RollingDice' element={<RollingDice />} />
-                        <Route exact path='/Practice/LineThroughTwoPoints_SlopeOnly' element={<LineThroughTwoPointsSlopeOnly />} />
+                        <Route exact path='/Practice/LinearEquations' element={<LinearEquations />} />
                         <Route exact path='/Practice/CompleteTheSquare' element={<CompleteTheSquare />} />
                         <Route exact path='/Practice/ChineseRemainderTheorem' element={<ChineseRemainderTheorem />} />
                         <Route exact path='/Practice/SimpleLogarithm' element={<SimpleLogarithm />} />
