@@ -30,56 +30,53 @@ class LinearEquations extends Component {
     generateQuestion = () => {
         // 0.666666666666666 === 2 / 3 // false
         // 0.6666666666666666 === 2 / 3 // true
-        let xP, yP, xQ, yQ, xR, yR, t, dx, dy
-
-        xP = myMath.randomInteger(1, 5);
-        yP = myMath.randomInteger(1, 5);
-        yQ = myMath.randomInteger(1, 5);
-        xQ = myMath.randomInteger(1, 5);
-        [xP, yP, yQ, xQ] = [xP, yP, yQ, xQ].map(e => Math.random() > 0.5 ? e * (-1) : e);
-        // QR = t*PQ
-        t = myMath.randomInteger(1, 10);
-        dx = xQ - xP;
-        dy = yQ - yP;
-        xR = xQ + t * dx;
-        yR = yQ + t * dy;
-
-        while (xQ === xP || yQ === yP || xR === 0 || yR === 0) {
-            xP = myMath.randomInteger(1, 5);
-            yP = myMath.randomInteger(1, 5);
-            yQ = myMath.randomInteger(1, 5);
-            xQ = myMath.randomInteger(1, 5);
-            [xP, yP, yQ, xQ] = [xP, yP, yQ, xQ].map(e => Math.random() > 0.5 ? e * (-1) : e);
-            // QR = t*PQ
-            t = myMath.randomInteger(1, 10);
-            dx = xQ - xP;
-            dy = yQ - yP;
-            xR = xQ + t * dx;
-            yR = yQ + t * dy;
-        };
-
-        let slope = (yQ - yP) / (xQ - xP);
-        let slopeFraction = myMath.reduceFraction(yQ - yP, xQ - xP);
+        let xIntercept = myMath.randomInteger(1, 5);
+        let yIntercept = myMath.randomInteger(1, 5);
+        xIntercept = Math.random() > 0.5 ? xIntercept : -xIntercept;
+        yIntercept = Math.random() > 0.5 ? yIntercept : -yIntercept;
+        let slope = -yIntercept / xIntercept;
+        let slopeFraction = myMath.reduceFraction(-yIntercept, xIntercept);
         let slopeTex = myMath.fractionToTex(slopeFraction);
-        let yIntercept = (xQ * yP - yQ * xP) / (xQ - xP);
-        let yInterceptFraction = myMath.reduceFraction(xQ * yP - yQ * xP, xQ - xP);
-        let yInterceptTex = myMath.fractionToTex(yInterceptFraction);
-        let xIntercept = (yQ * xP - xQ * yP) / (yQ - yP);
-        let xInterceptFraction = myMath.reduceFraction(yQ * xP - xQ * yP, yQ - yP);
-        let xInterceptTex = myMath.fractionToTex(xInterceptFraction);
 
+        let scaleFactor = myMath.randomInteger(0, 10);
+        xIntercept *= scaleFactor;
+        yIntercept *= scaleFactor;
+        let allPoints = [];
 
-        [[xP, yP], [xQ, yQ], [xR, yR]] = myMath.shuffleArray([[xP, yP], [xQ, yQ], [xR, yR]]);
+        for (let x = -50; x <= 50; x++) {
+            for (let y = -50; y <= 50; y++) {
+                if ((y - yIntercept) * slopeFraction[1] === x * slopeFraction[0]
+                    && x * y !== 0)
+                { allPoints.push([x,y]) }
+            }
+        }
+
+        let [iP, iQ, iR] = myMath.randomDistinctIntegers(allPoints.length, 0, allPoints.length - 1);
+        let [[xP, yP], [xQ, yQ], [xR, yR]] = [allPoints[iP], allPoints[iQ], allPoints[iR]];
 
         // [0,1,2,3,4,5]
         // [m,b,a,P,Q,R]
-        let [conditionIndex1, conditionIndex2, questionIndex] = myMath.randomDistinctIntegers(3, 0, 5);
+        let allConditionIndexes = myMath.randomDistinctIntegers(3, 0, 5);
+
+        if (xIntercept === 0) {
+            while (allConditionIndexes.includes(1) && allConditionIndexes.includes(2)) {
+                allConditionIndexes = myMath.randomDistinctIntegers(3, 0, 5);
+            }
+        }
+
+        if (!allConditionIndexes.includes(3)) { allConditionIndexes = allConditionIndexes.map(e => e > 3 ? e - 1 : e) }
+        if (!allConditionIndexes.includes(3)) { allConditionIndexes = allConditionIndexes.map(e => e > 3 ? e - 1 : e) }
+        if (!allConditionIndexes.includes(4)) { allConditionIndexes = allConditionIndexes.map(e => e > 4 ? e - 1 : e) }
+
+        
+        let [conditionIndex1, conditionIndex2, questionIndex] = allConditionIndexes;
+
 
         let askingX = Math.random() > 0.5 ? true : false;
         let allConditionsTex = [
             slopeTex,
-            yInterceptTex,
-            xInterceptTex,
+            yIntercept+'',
+            xIntercept+'',
             questionIndex === 3
                 ? askingX ? 'P(x_P,' + yP + ')' : 'P(' + xP + ',y_P)'
                 : 'P(' + xP + ',' + yP + ')',
@@ -148,7 +145,6 @@ class LinearEquations extends Component {
         let correctAnswer;
         let correctNumerator, correctDenominator;
 
-
         switch (questionIndex) {
             case 0:
                 questionTex = <>What is the slope of line {lTex}? </>;
@@ -158,12 +154,10 @@ class LinearEquations extends Component {
             case 1:
                 questionTex = <>What is the y-intercept of line {lTex}? </>;
                 correctAnswer = yIntercept;
-                [correctNumerator, correctDenominator] = yInterceptFraction;
                 break;
             case 2:
                 questionTex = <>What is the x-intercept of line {lTex}? </>;
                 correctAnswer = xIntercept;
-                [correctNumerator, correctDenominator] = xInterceptFraction;
                 break;
             case 3:
                 askingCoordinateTex = askingX ? 'x_P' : 'y_P';
@@ -203,10 +197,98 @@ class LinearEquations extends Component {
                 correctDenominator: correctDenominator,
             })
         }
+
+        let conditions, mGiven, bGiven
+        if (allConditionIndexes.includes(5)) {
+            conditions = <>The points <MathComponent display={false} tex={allConditionsTex[3] + ', ' + allConditionsTex[4] + ', ' + allConditionsTex[5]} /> are on the same line
+                . What is <MathComponent display={false} tex={askingCoordinateTex} />? </>
+        } else if (allConditionIndexes.includes(4)) {
+            conditions = <>The points <MathComponent display={false} tex={allConditionsTex[3] + ', ' + allConditionsTex[4]} /> are on the line {lTex}. </>
+            conditionTex1 = conditionIndex1 <= 2 ? conditionTex1 : '';
+            conditionTex2 = conditionIndex2 <= 2 ? conditionTex2 : '';
+            questionTex = questionIndex <= 2 ? questionTex : <>What is < MathComponent display={false} tex={askingCoordinateTex} />? </>
+            conditions = <>{conditions} {conditionTex1} {conditionTex2} {questionTex}</>
+        } else if (allConditionIndexes.includes(3)) {
+            mGiven = conditionIndex1 === 0 || conditionIndex2 === 0;
+            bGiven = conditionIndex1 === 1 || conditionIndex2 === 1;
+            conditions = <>The point <MathComponent display={false} tex={allConditionsTex[3]} /> is on the line {lTex}
+                <MathComponent display={false} tex={':y={' +
+                    (mGiven
+                    ? slope === 1
+                        ? ''
+                        : slope === -1 ? '-' : slopeTex
+                    : 'm'
+                    ) + '}x' +
+                    (bGiven 
+                    ? yIntercept >= 0
+                        ? yIntercept === 0
+                            ? ''
+                            : ('+' + yIntercept)
+                        : yIntercept
+                    : '+b')} />. </>
+            conditionTex1 = conditionIndex1 === 2 ? conditionTex1 : '';
+            conditionTex2 = conditionIndex2 === 2 ? conditionTex2 : '';
+            questionTex = questionIndex <= 2 ? questionTex : <>What is < MathComponent display={false} tex={askingCoordinateTex} />? </>
+            conditions = <>{conditions} {conditionTex1} {conditionTex2} {questionTex}</>
+        } else if (allConditionIndexes.includes(2)) {
+            mGiven = conditionIndex1 === 0 || conditionIndex2 === 0;
+            bGiven = conditionIndex1 === 1 || conditionIndex2 === 1;
+            if (questionIndex === 0) {
+                conditions = <>The x-intercept of the line {lTex}
+                    <MathComponent display={false} tex={':y={' +
+                        (mGiven
+                            ? slope === 1
+                                ? ''
+                                : slope === -1 ? '-' : slopeTex
+                            : 'm'
+                        ) + '}x' +
+                        (bGiven
+                            ? yIntercept >= 0
+                                ? yIntercept === 0
+                                    ? ''
+                                    : ('+' + yIntercept)
+                                : yIntercept
+                            : '+b')} /> is {xIntercept}. What is m?
+                </>
+            } else if (questionIndex === 1) {
+                conditions = <>The x-intercept of the line {lTex}
+                    <MathComponent display={false} tex={':y={' +
+                        (mGiven
+                            ? slope === 1
+                                ? ''
+                                : slope === -1 ? '-' : slopeTex
+                            : 'm'
+                        ) + '}x' +
+                        (bGiven
+                            ? yIntercept >= 0
+                                ? yIntercept === 0
+                                    ? ''
+                                    : ('+' + yIntercept)
+                                : yIntercept
+                            : '+b')} /> is {xIntercept}. What is b?
+                </>
+            } else if (questionIndex === 2) {
+                conditions = <>What is the x-intercept of the line {lTex}
+                    <MathComponent display={false} tex={':y={' +
+                        (mGiven
+                            ? slope === 1
+                                ? ''
+                                : slope === -1 ? '-' : slopeTex
+                            : 'm'
+                        ) + '}x' +
+                        (bGiven
+                            ? yIntercept >= 0
+                                ? yIntercept === 0
+                                    ? ''
+                                    : ('+' + yIntercept)
+                                : yIntercept
+                            : '+b')} />?
+                </>
+            }
+        } else { conditions = <>{conditionTex1} {conditionTex2} {questionTex}</> }
+
         return <>
-            {conditionTex1}
-            {conditionTex2}
-            {questionTex}<br/>
+            {conditions}<br/>
             (Please type 'a/b' for fraction <MathComponent display={false} tex={'a \\over b'} />)</>
     }
 
