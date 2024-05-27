@@ -6,6 +6,8 @@ function Contests() {
             <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 2.5%) </th></tr>
         </thead>
         <tbody>
+            <tr><td> 2024 </td><td> 69 </td><td> 85 </td></tr>
+            <tr><td> 2023 </td><td> 65 </td><td> 82 </td></tr>
             <tr><td> 2022 </td><td> 68 </td><td> 85 </td></tr>
             <tr><td> 2021 </td><td> 69 </td><td> 86 </td></tr>
             <tr><td colSpan="3"> 2020: cancelled due to Covid </td></tr>
@@ -38,6 +40,7 @@ function Contests() {
             <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 2.5%) </th></tr>
         </thead>
         <tbody>
+            <tr><td> 2023 </td><td> 33 </td><td> 45 </td></tr>
             <tr><td> 2022 </td><td> 34 </td><td> 42 </td></tr>
             <tr><td> 2021 </td><td> 32 </td><td> 46 </td></tr>
             <tr><td> 2020 </td><td> 42 </td><td> 52 </td></tr>
@@ -57,6 +60,7 @@ function Contests() {
             <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 2.5%) </th></tr>
         </thead>
         <tbody>
+            <tr><td> 2023 </td><td> 36 </td><td> 47 </td></tr>
             <tr><td> 2022 </td><td> 38 </td><td> 47 </td></tr>
             <tr><td> 2021 </td><td> 37 </td><td> 47 </td></tr>
             <tr><td> 2020 </td><td> 41 </td><td> 49 </td></tr>
@@ -82,6 +86,7 @@ function Contests() {
             </tr>
         </thead>
         <tbody>
+            <tr><td> 2023 </td><td> 36 </td><td> 46.5 </td><td> 64 </td><td> 69 </td></tr>
             <tr><td> 2022 </td><td> 28 </td><td> 41 </td><td> 63.5 </td><td> 69 </td></tr>
             <tr><td> 2021 </td><td> 29 </td><td> NA </td><td> 62 </td><td> 68 </td></tr>
             <tr><td> 2020 </td><td> 33 </td><td> 44 </td><td> 60.5 </td><td> 66 </td></tr>
@@ -121,6 +126,7 @@ function Contests() {
             </tr>
         </thead>
         <tbody>
+            <tr><td> 2023 </td><td> 103.5 </td><td> 111 </td><td> 136.5 </td></tr>
             <tr><td> 2022 </td><td> 93 </td><td> 100.5 </td><td> 121.5 </td></tr>
             <tr><td> 2021Fall </td><td> 96 </td><td> 100.5 </td><td> 117 </td></tr>
             <tr><td> 2021Spring </td><td> 103.5 </td><td> 112.5 </td><td> 132 </td></tr>
@@ -149,6 +155,7 @@ function Contests() {
             </tr>
         </thead>
         <tbody>
+            <tr><td> 2023 </td><td> 105 </td><td> 112.5 </td><td> 135 </td></tr>
             <tr><td> 2022 </td><td> 94.5 </td><td> 100.5 </td><td> 114 </td></tr>
             <tr><td> 2021Fall </td><td> 96 </td><td> 100.5 </td><td> 120 </td></tr>
             <tr><td> 2021Spring </td><td> 102 </td><td> 108 </td><td> 126 </td></tr>
@@ -177,6 +184,7 @@ function Contests() {
             </tr>
         </thead>
         <tbody>
+            <tr><td> 2022 </td><td> 85.5 </td><td> 112.5 </td><td> 136.5 </td></tr>
             <tr><td> 2022 </td><td> 85.5 </td><td> 106.5 </td><td> 126 </td></tr>
             <tr><td> 2021Fall </td><td> 91.5 </td><td> 111 </td><td> 130.5 </td></tr>
             <tr><td> 2021Spring </td><td> 93 </td><td> 114 </td><td> 133.5 </td></tr>
@@ -205,6 +213,7 @@ function Contests() {
             </tr>
         </thead>
         <tbody>
+            <tr><td> 2023 </td><td> 88.5 </td><td> 115.5 </td><td> 139.5 </td></tr>
             <tr><td> 2022 </td><td> 81 </td><td> 105 </td><td> 129 </td></tr>
             <tr><td> 2021Fall </td><td> 84 </td><td> 103.5 </td><td> 130.5 </td></tr>
             <tr><td> 2021Spring </td><td> 91.5 </td><td> 109.5 </td><td> 132 </td></tr>
@@ -449,6 +458,7 @@ function Contests() {
                                 <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 1.5%) </th></tr>
                             </thead>
                             <tbody>
+                                <tr><td> 2024 </td><td> 103 </td><td> 134 </td></tr>
                                 <tr><td> 2023 </td><td> 104 </td><td> 134 </td></tr>
                                 <tr><td> 2022 </td><td> 102 </td><td> 133 </td></tr>
                                 <tr><td> 2021 </td><td> 118 </td><td> 138 </td></tr>
@@ -499,6 +509,8 @@ function Contests() {
                                 <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 10%) </th></tr>
                             </thead>
                             <tbody>
+                                <tr><td> 2024 </td><td> 28 </td><td> 34 </td></tr>
+                                <tr><td> 2023 </td><td> 26 </td><td> 31 </td></tr>
                                 <tr><td> 2022 </td><td> 25 </td><td> 30 </td></tr>
                                 <tr><td> 2021 </td><td> 32 </td><td> 34 </td></tr>
                                 <tr><td colSpan="3"> 2020: cancelled due to Covid </td></tr>
@@ -600,6 +612,7 @@ function Contests() {
                                 <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 1.5%) </th></tr>
                             </thead>
                             <tbody>
+                                <tr><td> 2024 </td><td> 111 </td><td> 136 </td></tr>
                                 <tr><td> 2023 </td><td> 108 </td><td> 132 </td></tr>
                                 <tr><td> 2022 </td><td> 105 </td><td> 128 </td></tr>
                                 <tr><td> 2021 </td><td> 114 </td><td> 132 </td></tr>
@@ -650,6 +663,8 @@ function Contests() {
                                 <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 10%) </th></tr>
                             </thead>
                             <tbody>
+                                <tr><td> 2023 </td><td> 29 </td><td> 31 </td></tr>
+                                <tr><td> 2023 </td><td> 29 </td><td> 33 </td></tr>
                                 <tr><td> 2022 </td><td> 26 </td><td> 30 </td></tr>
                                 <tr><td> 2021 </td><td> 29 </td><td> 31 </td></tr>
                                 <tr><td colSpan="3"> 2020: cancelled due to Covid </td></tr>
@@ -758,6 +773,7 @@ function Contests() {
                                 <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 1.5%) </th></tr>
                             </thead>
                             <tbody>
+                                <tr><td> 2024 </td><td> 108 </td><td> 134 </td></tr>
                                 <tr><td> 2023 </td><td> 102 </td><td> 124 </td></tr>
                                 <tr><td> 2022 </td><td> 100 </td><td> 126 </td></tr>
                                 <tr><td> 2021 </td><td> 112 </td><td> 134 </td></tr>
@@ -819,6 +835,8 @@ function Contests() {
                                 <tr><th> Year </th><th> Certificate <br /> (Top 25%) </th><th> Honour Roll <br /> (&asymp; Top 10%) </th></tr>
                             </thead>
                             <tbody>
+                                <tr><td> 2024 </td><td> 30 </td><td> 32 </td></tr>
+                                <tr><td> 2023 </td><td> 28 </td><td> 32 </td></tr>
                                 <tr><td> 2022 </td><td> 30 </td><td> 33 </td></tr>
                                 <tr><td> 2021 </td><td> 30 </td><td> 33 </td></tr>
                                 <tr><td colSpan="3"> 2020: cancelled due to Covid </td></tr>
