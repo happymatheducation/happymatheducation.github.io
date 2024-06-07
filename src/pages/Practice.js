@@ -140,7 +140,9 @@ function Practice() {
                 <div className='practicediv'>
                     Number of Factors: <br />&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href='/Practice/NumberOfFactors'>App</a> |
+                    {/*                    <a href='/Practice/NumberOfFactorsBattle'>Battle</a> |*/}
                     <a href={number_of_factors}>pdf</a>
+
                 </div>
                 <div className='practicediv'>
                     Perfect Squares: <br />&nbsp;&nbsp;&nbsp;&nbsp;

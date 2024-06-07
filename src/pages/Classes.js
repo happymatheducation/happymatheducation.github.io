@@ -1,5 +1,5 @@
 //import Classes from '../assets/classes'
-import timeTable from '../HappyMath 2024Jul-Dec Timetable.jpg';
+import timeTable from '../HappyMath 2024Jul-Dec Timetable.png';
 
 
 function Classes() {
