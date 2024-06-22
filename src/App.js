@@ -21,7 +21,6 @@ const QuadraticDiophantineEquationsTypeAB = lazy(() => import("./pages/Practice/
 const QuadraticDiophantineEquationsSimpleSquareType = lazy(() => import("./pages/Practice/Quadratic_Diophantine_Equations_Simple_Square_Type.js"))
 const TrigsOfSpeicalAngles = lazy(() => import("./pages/Practice/Trigs_Of_Special_Angles.js"))
 const NumberOfFactors = lazy(() => import("./pages/Practice/NumberOfFactors.js"))
-const NumberOfFactorsBattle = lazy(() => import("./pages/Practice/NumberOfFactorsBattle.js"))
 const RemainderOfProductsAndPowers = lazy(() => import("./pages/Practice/RemainderOfProductsAndPowers.js"))
 const DeMoivresFormula = lazy(() => import("./pages/Practice/De_Moivres_Formula.js"))
 const EuclidsTheorem = lazy(() => import("./pages/Practice/Euclids_Theorem.js"))
@@ -150,6 +149,12 @@ function ScrollToTop() {
     return null;
 }
 
+export const SecretPath = () => {
+    return (
+        window.location.replace("http://172.105.25.139:3000/")
+    )
+}
+
 const App = () => {
 
     AOS.init();
@@ -176,7 +181,6 @@ const App = () => {
                         <Route exact path='/Practice/Quadratic_Diophantine_Equations_Simple_Square_Type' element={<QuadraticDiophantineEquationsSimpleSquareType />} />
                         <Route exact path='/Practice/Trigs_Of_Special_Angles' element={<TrigsOfSpeicalAngles />} />
                         <Route exact path='/Practice/NumberOfFactors' element={<NumberOfFactors />} />
-                        <Route exact path='/Practice/NumberOfFactorsBattle' element={<NumberOfFactorsBattle />} />
                         <Route exact path='/Practice/RemainderOfProductsAndPowers' element={<RemainderOfProductsAndPowers />} />
                         <Route exact path='/Practice/De_Moivres_Formula' element={<DeMoivresFormula />} />
                         <Route exact path='/Practice/PrimeFactorizationForFactorials' element={<PrimeFactorizationForFactorials />} />
@@ -230,6 +234,8 @@ const App = () => {
                         <Route exact path='/Practice/LongSubtraction' element={<LongSubtraction />} />
                         <Route exact path='/Practice/Adventure' element={<Adventure />} />
                         <Route exact path='/*' element={<Notfound />} />
+
+                        <Route exact path="/ss" element={<SecretPath/>} />
                     </Routes>
                 </div>
             </Suspense>
